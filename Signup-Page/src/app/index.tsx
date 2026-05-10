@@ -41,8 +41,7 @@ export default function Index() {
             fontFamily: "CenturyGothic",
           }}
         >
-          Welcome to the Sign In Page! Please fill in your details to create an
-          account.
+          Welcome to the Sign In Page!
         </Text>
       </View>
 
@@ -92,7 +91,7 @@ export default function Index() {
           style={{
             backgroundColor: "#15d451",
             padding: 10,
-            borderRadius: 10,
+            borderRadius: 20,
             alignContent: "center",
             alignItems: "center",
           }}
@@ -143,6 +142,7 @@ export default function Index() {
             marginLeft: 20,
             alignContent: "center",
             alignItems: "center",
+            borderRadius: 10,
           }}
         />
         {/* Instagram Image */}
@@ -156,20 +156,21 @@ export default function Index() {
             marginLeft: 20,
             alignContent: "center",
             alignItems: "center",
+            borderRadius: 10,
           }}
         />
       </View>
       {/* Text: Don't have an account?signUp */}
       <View>
         <Text style={{ textAlign: "center", fontSize: 16 }}>
-          Don't have an account?
+          {"Don't have an account? "}
           <Text
             style={{
               color: "#77e45be7",
               textDecorationLine: "underline",
             }}
           >
-            SignUp
+            SignUp.
           </Text>
         </Text>
         {/* Forgot Password */}
