@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import {Button} from '@react-navigation/elements'
-import { Link } from '@react-navigation/native';
+import { Link, useNavigation } from '@react-navigation/native';
 
 const HomeScreens = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <Text>HomeScreens</Text>
-      <Link screen={"Details"}>Go to Details</Link>
+      <Button onPress={() =>navigation.navigate("Details")}>Go to Details</Button>
     </View>
   )
 }
