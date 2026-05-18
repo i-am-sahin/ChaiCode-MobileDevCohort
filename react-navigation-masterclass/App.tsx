@@ -4,12 +4,15 @@ import { createStaticNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreens from './src/screens/HomeScreens';
 import DetailScreen from './src/screens/DetailScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 
 
 const Stack = createNativeStackNavigator({
   screens:{
-    Home :HomeScreens,
-    Details:DetailScreen,
+    Home: HomeScreens,
+    Details: DetailScreen,
+    Profile : ProfileScreen
+
 
   }
 });

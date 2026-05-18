@@ -7,7 +7,7 @@ const DetailScreen = () => {
   return (
     <View>
       <Text>DetailScreen</Text>
-      <Button title="Go Back" onPress={() => navigation.goBack()}/>
+      <Button title="Go to Profile Page" onPress={() => navigation.navigate("Profile",{userName : "ChaiCode"})}/>
     </View>
   )
 }
