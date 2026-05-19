@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 function MyStack() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name='Home' component={HomeScreens} options={{
+            <Stack.Screen name='Home' component={HomeScreens} options={{ // using Options to customize header for Home Screen, other screens will use default header through Stack.Navigator. We can also use options for each screen to customize header for each screen.and we can also use options for customise everything about header for each screen.
                 headerShown : true,
                 title : 'My Home Page',
                 headerStyle :{
