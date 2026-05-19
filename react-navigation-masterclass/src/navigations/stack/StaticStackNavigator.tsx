@@ -2,10 +2,10 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { createStaticNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreens from './src/screens/HomeScreens';
-import DetailScreen from './src/screens/DetailScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import DynamicStackNavigator from './src/navigations/stack/DynamicStackNavigator';
+import HomeScreens from '../../screens/HomeScreens';
+import DetailScreen from '../../screens/DetailScreen';
+import ProfileScreen from '../../screens/ProfileScreen';
+
 
 
 const Stack = createNativeStackNavigator({
@@ -21,5 +21,5 @@ const Stack = createNativeStackNavigator({
 const Navigation = createStaticNavigation(Stack);
 
 export default function App(){
-  return <DynamicStackNavigator />
+  return <Navigation />
 }
