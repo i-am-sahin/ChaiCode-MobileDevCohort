@@ -20,6 +20,6 @@ const Stack = createNativeStackNavigator({
 
 const Navigation = createStaticNavigation(Stack);
 
-export default function App(){
+export default function StaticStackNavigator(){
   return <Navigation />
 }
