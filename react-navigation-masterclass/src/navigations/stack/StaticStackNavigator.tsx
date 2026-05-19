@@ -9,8 +9,22 @@ import ProfileScreen from '../../screens/ProfileScreen';
 
 
 const Stack = createNativeStackNavigator({
-  screens:{
-    Home: HomeScreens,
+  screens:{ 
+    Home: {
+      screen: HomeScreens,
+      options : { //Using options we can customize header for static stack navigator, we can also use options for each screen to customize header for each screen and we can also use options for customise everything about header for each screen.
+        title : 'My Home Page',
+        headerStyle :{
+            backgroundColor : '#44ccca'
+        },
+        headerTintColor : 'white',
+        headerTitleAlign : 'center',
+        headerTitleStyle :{
+            fontSize : 24,
+            fontWeight : 'bold',
+        },
+      }
+    },
     Details: DetailScreen,
     Profile : ProfileScreen
 

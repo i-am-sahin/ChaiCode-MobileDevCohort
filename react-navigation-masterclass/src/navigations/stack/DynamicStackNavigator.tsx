@@ -31,7 +31,8 @@ function MyStack() {
                 headerTitleStyle :{
                     fontSize : 24,
                     fontWeight : 'bold',
-                }
+                },
+                animation : 'fade', //using animation to animate header when we navigate to Home Screen, we can use different animation for each screen and we can also use animation for customize animation for header when we navigate to each screen.
             }}/>
             <Stack.Screen name='Details' component={DetailScreen}/>
             <Stack.Screen name='Profile' component={ProfileScreen}/>
