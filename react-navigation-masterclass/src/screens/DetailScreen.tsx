@@ -11,7 +11,7 @@ const DetailScreen = () => {
     navigation.setOptions({
         title : "Sahin's Detail Page"
     })
-  },[navigation])
+  })
   return (
     <View>
       <Text>DetailScreen</Text>
