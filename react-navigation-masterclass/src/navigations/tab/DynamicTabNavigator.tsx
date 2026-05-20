@@ -7,11 +7,15 @@ import DetailScreen from '../../screens/DetailScreen';
 import HomeScreens from '../../screens/HomeScreens';
 
 const Tab = createBottomTabNavigator();
-function myTabs(){
+function MyTabs(){
     return (
-        <Tab.Navigator>
-            <Tab.Screen name="Home" component={HomeScreens} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Navigator initialRouteName='Details' screenOptions={{headerShown:true}}>
+            <Tab.Screen name="Home" component={HomeScreens} 
+            options={{
+                title:"Dashboard",
+                tabBarLabel: "Start"
+            }}/>
+            {/* <Tab.Screen name="Profile" component={ProfileScreen} /> */}
             <Tab.Screen name="Details" component={DetailScreen} />
         </Tab.Navigator>
     )
@@ -20,7 +24,7 @@ function myTabs(){
 export default function DynamicTabNavigator(){
     return (
         <NavigationContainer>
-            <myTabs />
+            <MyTabs />
         </NavigationContainer>
     )
 }
