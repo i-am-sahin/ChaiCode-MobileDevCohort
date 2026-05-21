@@ -6,66 +6,30 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import DetailScreen from '../../screens/DetailScreen';
 import HomeScreens from '../../screens/HomeScreens';
+import SearchScreen from '../../screens/SearchScreen';
 import {Ionicons} from '@expo/vector-icons';
+import { createStackNavigator } from '@react-navigation/stack';
+import ProfileScreen from '../../screens/ProfileScreen';
 
-
-function HomeScreen() {
-    const navigation = useNavigation();
-    
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Button onPress={() =>{
-            navigation.navigate('Profile');
-        }}>Go to Profile</Button>
-      </View>
-    );
-}
-
-
-function ProfileScreen() {
-    const navigation = useNavigation();
+const HomeStack = createStackNavigator();
+function HomeStackScreens(){
     return(
-        <View style={{flex : 1, alignItems : 'center', justifyContent : 'center'}}>
-            <Text>Profile Screen</Text>
-             <Button onPress={() =>{
-            navigation.navigate('Home');
-        }}>Go to Home</Button>
-        </View>
-    );
+        <HomeStack.Navigator>
+            <HomeStack.Screen name="Home" component={HomeScreens}/>
+            <HomeStack.Screen name="Detail" component={DetailScreen}/>
+        </HomeStack.Navigator>
+    )
 
 }
+
 const Tab = createBottomTabNavigator();
 function MyTabs(){
     return (
-        <Tab.Navigator initialRouteName='Home' screenOptions={
-            ({route}) =>({
-                tabBarStyle:{
-                    height : 70,
-                    paddingBottom : 10,
-                    paddingTop : 10,
-                },
-                // tabBarActiveTintColor : 'indigo',
-                tabBarInactiveTintColor : 'gray', 
-                tabBarIcon: ({focused,color,size}) =>{
-                    const icon = route.name === "Home"
-                        ? focused ? "home" : "home-outline"
-                        : route.name === "Profile"
-                        ? focused ? "chatbubble" : "chatbubble-outline"
-                        : "help";
-                    return <Ionicons name={icon} size={size} color={color} />
-                }
-            })
-        }>
-            <Tab.Screen name="Home" component={HomeScreen} 
-            options={{
-                title:"Dashboard",
-                tabBarLabel: "Start"
-            }}/>
-            {/* <Tab.Screen name="Profile" component={ProfileScreen} /> */}
-            <Tab.Screen name="Profile" component={ProfileScreen} options={{
-                tabBarBadge:13
-            }}/>
+        <Tab.Navigator >
+            <Tab.Screen name='OverView' component={HomeStackScreens} options={{headerShown:false}}/>
+            <Tab.Screen name='Search' component={SearchScreen} />
+            <Tab.Screen name = 'Profile' component={ProfileScreen} />
+           
         </Tab.Navigator>
     )
 }

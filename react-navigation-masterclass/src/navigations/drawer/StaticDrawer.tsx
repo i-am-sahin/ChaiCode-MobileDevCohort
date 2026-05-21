@@ -5,10 +5,8 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 import { Button } from '@react-navigation/elements';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import DynamicTabNavigator from './src/navigations/tab/DynamicTabNavigator';
-import StaticDrawer from './src/navigations/drawer/StaticDrawer';
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import DynamicDrawer from './DynamicDrawer';
 
 function HomeScreen() {
   const navigation = useNavigation();
@@ -34,15 +32,15 @@ function ProfileScreen() {
   );
 }
 
-const MyTabs = createBottomTabNavigator({
+const MyDrawer = createDrawerNavigator({
   screens: {
     Home: HomeScreen,
     Profile: ProfileScreen,
   },
 });
 
-const Navigation = createStaticNavigation(MyTabs);
+const Navigation = createStaticNavigation(MyDrawer);
 
-export default function App() {
-  return <StaticDrawer />;
+export default function StaticDrawer() {
+  return <DynamicDrawer />;
 }
