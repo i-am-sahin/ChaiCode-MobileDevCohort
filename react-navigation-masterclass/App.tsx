@@ -8,6 +8,7 @@ import { Button } from '@react-navigation/elements';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import DynamicTabNavigator from './src/navigations/tab/DynamicTabNavigator';
 
+
 function HomeScreen() {
   const navigation = useNavigation();
 
